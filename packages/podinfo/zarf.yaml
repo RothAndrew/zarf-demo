@@ -1,0 +1,17 @@
+kind: ZarfPackageConfig
+metadata:
+  name: "podinfo"
+  description: "Install the podinfo example"
+
+components:
+  - name: podinfo
+    required: true
+    images:
+      - "stefanprodan/podinfo:6.2.1"
+    manifests:
+      - name: podinfo
+        namespace: podinfo
+        files:
+          - manifests/namespace.yaml
+          - manifests/service.yaml
+          - manifests/deployment.yaml
